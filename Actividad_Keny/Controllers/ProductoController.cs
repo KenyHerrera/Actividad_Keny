@@ -35,10 +35,13 @@ namespace Actividad_Keny.Controllers
         }
 
         // GET: Producto/Create
-        public ActionResult Create()
+        public ActionResult Create()  
         {
+            List<Categoria> ListaIDs = db.Categorias.ToList();
 
-            ViewData.ID_Categoria = db.Categorias.ToList();
+            //db.Categorias.ToList();
+
+            ViewBag.ID_Categoria = new SelectList(ListaIDs, "ID_Categoria", "ID_Categoria");
             return View();
         }
 
