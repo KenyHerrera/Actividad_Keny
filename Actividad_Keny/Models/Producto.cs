@@ -8,7 +8,6 @@ using System.Web;
 
 namespace Actividad_Keny.Models
 {
-    
     public class Producto
     {
         [Key]

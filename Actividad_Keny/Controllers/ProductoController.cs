@@ -37,6 +37,8 @@ namespace Actividad_Keny.Controllers
         // GET: Producto/Create
         public ActionResult Create()
         {
+
+            ViewData.ID_Categoria = db.Categorias.ToList();
             return View();
         }
 
