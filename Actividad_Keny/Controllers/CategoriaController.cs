@@ -103,15 +103,17 @@ namespace Actividad_Keny.Controllers
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            Producto producto = db.Productos.Find(id);
-            db.Productos.Remove(producto);
+            Categoria categoria = db.Categorias.Find(id);
+            
             try
             {
+                db.Categorias.Remove(categoria);
                 db.SaveChanges();
             }
             catch (Exception ex)
             {
-
+                string script = "<script>alert('" + ex.Message + "');</script>";
+                
             }
             return RedirectToAction("Index");
 

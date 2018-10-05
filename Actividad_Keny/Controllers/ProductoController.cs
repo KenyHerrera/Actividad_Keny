@@ -72,6 +72,11 @@ namespace Actividad_Keny.Controllers
             {
                 return HttpNotFound();
             }
+            List<Categoria> ListaIDs = db.Categorias.ToList();
+
+            //db.Categorias.ToList();
+
+            ViewBag.ID_Categoria = new SelectList(ListaIDs, "ID_Categoria", "ID_Categoria");
             return View(producto);
         }
 
